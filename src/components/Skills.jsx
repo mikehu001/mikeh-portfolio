@@ -2,16 +2,20 @@ import { skills } from '../data/resume'
 
 export default function Skills() {
   return (
-    <section id="skills" className="section">
+    <section id="skills" className="card">
       <h2 className="section-title">Skills</h2>
-      <dl className="space-y-5">
+      <dl className="space-y-6">
         {skills.map((skill) => (
-          <div key={skill.group} className="sm:flex sm:gap-6">
-            <dt className="w-48 shrink-0 text-sm font-medium text-slate-900">
-              {skill.group}
-            </dt>
-            <dd className="mt-1 text-sm text-slate-600 sm:mt-0">
-              {skill.items.join(' · ')}
+          <div key={skill.group}>
+            <dt className="text-sm font-semibold text-slate-900">{skill.group}</dt>
+            <dd className="mt-2.5">
+              <ul className="flex flex-wrap gap-2">
+                {skill.items.map((item) => (
+                  <li key={item} className="chip">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </dd>
           </div>
         ))}

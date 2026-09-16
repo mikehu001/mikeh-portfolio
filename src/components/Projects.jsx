@@ -2,7 +2,7 @@ import { projects } from '../data/resume'
 
 export default function Projects() {
   return (
-    <section id="projects" className="section">
+    <section id="projects" className="card">
       <h2 className="section-title">Projects</h2>
       <div className="grid gap-4 sm:grid-cols-2">
         {projects.map((project) => {
@@ -14,8 +14,8 @@ export default function Projects() {
             <Wrapper
               key={project.name}
               {...linkProps}
-              className={`block rounded-lg border border-slate-200 p-5 transition ${
-                project.href ? 'hover:border-accent-600 hover:shadow-sm' : ''
+              className={`block rounded-xl bg-slate-50 p-5 ring-1 ring-inset ring-slate-900/5 transition ${
+                project.href ? 'hover:bg-white hover:shadow-card hover:ring-accent-200' : ''
               }`}
             >
               <h3 className="font-semibold text-slate-900">{project.name}</h3>
@@ -24,10 +24,7 @@ export default function Projects() {
               </p>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="rounded bg-slate-100 px-2 py-0.5 text-xs text-slate-500"
-                  >
+                  <li key={tag} className="chip">
                     {tag}
                   </li>
                 ))}

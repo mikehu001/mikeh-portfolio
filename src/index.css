@@ -7,15 +7,54 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-white text-slate-800 antialiased;
+    @apply bg-slate-50 text-slate-800 antialiased;
+  }
+  ::selection {
+    @apply bg-accent-200 text-accent-900;
+  }
+  /* Respect users who prefer reduced motion. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
   }
 }
 
 @layer components {
-  .section {
-    @apply mx-auto w-full max-w-3xl px-6 py-14 sm:py-16;
+  .shell {
+    @apply mx-auto w-full max-w-3xl px-5 sm:px-6;
+  }
+  .card {
+    @apply rounded-2xl bg-white p-6 shadow-card ring-1 ring-slate-900/5 sm:p-8;
   }
   .section-title {
-    @apply mb-8 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500;
+    @apply mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500;
+  }
+  /* Short accent rule that sits before each section label. */
+  .section-title::before {
+    @apply h-px w-6 shrink-0 bg-accent-400 content-[''];
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 ring-1 ring-inset ring-slate-900/5 transition hover:bg-accent-50 hover:text-accent-700 hover:ring-accent-200;
+  }
+  /* Gradient title text. Forced-colors mode ignores background-clip, which
+     would render the text invisible, so fall back to a solid system color. */
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-700 to-accent-500 bg-clip-text text-transparent;
+  }
+  @media (forced-colors: active) {
+    .gradient-text {
+      -webkit-text-fill-color: currentColor;
+      color: CanvasText;
+    }
+  }
+  .link {
+    @apply rounded text-accent-700 underline-offset-4 transition hover:text-accent-800 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2;
   }
 }
