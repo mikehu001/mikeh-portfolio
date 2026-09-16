@@ -16,8 +16,10 @@ export default function Experience() {
                 {job.period}
               </span>
             </div>
-            {job.location && (
-              <p className="mt-0.5 text-sm text-slate-400">{job.location}</p>
+            {(job.note || job.location) && (
+              <p className="mt-0.5 text-sm text-slate-400">
+                {[job.note, job.location].filter(Boolean).join(' · ')}
+              </p>
             )}
             <ul className="mt-3 space-y-2">
               {job.bullets.map((bullet) => (

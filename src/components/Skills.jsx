@@ -28,9 +28,11 @@ export default function Skills() {
               <span className="font-medium text-slate-900">{entry.school}</span>
               <span className="text-slate-500"> · {entry.credential}</span>
             </span>
-            <span className="shrink-0 text-sm tabular-nums text-slate-400">
-              {entry.period}
-            </span>
+            {entry.period && (
+              <span className="shrink-0 text-sm tabular-nums text-slate-400">
+                {entry.period}
+              </span>
+            )}
           </li>
         ))}
       </ul>
