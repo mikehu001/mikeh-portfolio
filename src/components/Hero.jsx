@@ -34,7 +34,7 @@ export default function Hero() {
             {profile.name}
           </h1>
           <p className="mt-1 text-lg text-slate-600">{profile.title}</p>
-          <p className="mt-1 text-sm text-slate-400">{profile.location}</p>
+          <p className="mt-1 text-sm text-slate-500">{profile.location}</p>
           <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <li>
               <a

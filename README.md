@@ -28,6 +28,11 @@ npm run preview  # serve the production build locally
 
 Requires Node 20.
 
+## Deployment
+
+Already live. GitHub Pages is enabled with **GitHub Actions** as the source, so
+`.github/workflows/deploy.yml` rebuilds and republishes on every push to `main`.
+
 ## Remaining setup
 
 ### 1. Add the portrait
@@ -36,13 +41,7 @@ Save the photo to `public/assets/photo.jpg` (square crops best — it renders in
 112px circle). Until that file exists the hero shows an "MH" initials avatar, so
 the site never renders broken.
 
-### 2. Turn on GitHub Pages
-
-In the repo on GitHub: **Settings → Pages → Build and deployment → Source**, and
-choose **GitHub Actions**. The workflow in `.github/workflows/deploy.yml` then
-builds and publishes on every push to `main`.
-
-### 3. Enable the contact form (optional)
+### 2. Enable the contact form (optional)
 
 The contact section currently shows an email link. To make it a real form:
 

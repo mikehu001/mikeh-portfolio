@@ -12,12 +12,12 @@ export default function Experience() {
                 {job.role}
                 <span className="font-normal text-slate-500"> · {job.company}</span>
               </h3>
-              <span className="shrink-0 text-sm tabular-nums text-slate-400">
+              <span className="shrink-0 text-sm tabular-nums text-slate-500">
                 {job.period}
               </span>
             </div>
             {(job.note || job.location) && (
-              <p className="mt-0.5 text-sm text-slate-400">
+              <p className="mt-0.5 text-sm text-slate-500">
                 {[job.note, job.location].filter(Boolean).join(' · ')}
               </p>
             )}

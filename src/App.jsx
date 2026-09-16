@@ -2,6 +2,7 @@ import Hero from './components/Hero'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
+import Education from './components/Education'
 import Contact from './components/Contact'
 import { profile, projects } from './data/resume'
 
@@ -19,9 +20,10 @@ export default function App() {
         <Experience />
         {projects.length > 0 && <Projects />}
         <Skills />
+        <Education />
         <Contact />
       </main>
-      <footer className="section py-8 text-sm text-slate-400">
+      <footer className="section py-8 text-sm text-slate-500">
         © {new Date().getFullYear()} {profile.name}
       </footer>
     </div>
